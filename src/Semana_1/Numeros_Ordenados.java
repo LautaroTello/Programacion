@@ -1,3 +1,5 @@
+package Semana_1;
+
 import java.util.Scanner;
 
 public class Numeros_Ordenados {
