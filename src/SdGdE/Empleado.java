@@ -1,14 +1,15 @@
 package SdGdE;
 public abstract class Empleado {
-   protected String nombre;
-   protected int id;
-   protected double sueldobase;
+   private final String nombre;
+   private final int id;
+   private final double sueldobase;
 
    public Empleado(String nombre, int id, double sueldobase){
        this.nombre=nombre;
        this.id=id;
        this.sueldobase=sueldobase;
    }
+
    public String getNombre(){
        return nombre;
    }

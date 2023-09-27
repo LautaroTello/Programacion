@@ -11,21 +11,12 @@ public class Numeros_Ordenados {
         System.out.println("Ingrese tres números enteros uno por uno:");
 
         for (int i = 0; i < 4; i++) {
-            String mensaje;
-            switch (i) {
-                case 1:
-                    mensaje = "Primer número";
-                    break;
-                case 2:
-                    mensaje = "Segundo número";
-                    break;
-                case 3:
-                    mensaje = "Tercer número";
-                    break;
-                default:
-                    mensaje = "";
-                    break;
-            }
+            String mensaje = switch (i) {
+                case 1 -> "Primer número";
+                case 2 -> "Segundo número";
+                case 3 -> "Tercer número";
+                default -> "";
+            };
             if (!mensaje.isEmpty()) {
                 System.out.println(mensaje);
                 numeros[i - 1] = sc.nextInt();

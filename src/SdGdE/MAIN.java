@@ -83,6 +83,7 @@ public class MAIN {
             case 2 -> {
                 EmpleadoAsalariado empleadoAsalariado = new EmpleadoAsalariado(nombre, id, sueldobase);
                 gestor.agregarEmpleado(empleadoAsalariado);
+
             }
             case 3 -> {
                 System.out.print("Ingrese las ventas realizadas por el nuevo empleado: ");
@@ -132,7 +133,7 @@ public class MAIN {
                 System.out.println("El empleado ha sido modificado.");
             }
         }
-
+        scanner.close();
         // Muestra un mensaje de error si no se encuentra el empleado en el ArrayList
         if (!encontrado) {
             System.out.println("No se encontró ningún empleado con ese ID.");
