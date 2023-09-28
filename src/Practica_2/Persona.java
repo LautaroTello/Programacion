@@ -1,25 +1,39 @@
 package Practica_2;
+
 public class Persona {
-    protected String nombre;
-    protected String apellido;
-    protected int edad;
-    protected int dni;
-    protected String sexo;
-    protected double peso;
-    protected double altura;
 
 
-    public Persona(String apellido, int edad, String sexo, double peso, double altura) {
-        this.apellido = apellido;
-        this.edad = edad;
-        this.sexo = sexo;
-        this.peso = peso ;
-        this.altura = altura ;
+
+    //Declaración
+    private String nombre;
+    private String apellido;
+    private int edad;
+    private int dni;
+    private String sexo;
+    private double peso;
+    private double altura;
+
+    //Valores por defecto
+    public Persona() {
+        this.apellido = "";
+        this.edad = 0;
+        this.sexo = "H";
+        this.peso = 0;
+        this.altura = 0;
     }
 
+    //Constructor con dni y nombre
     public Persona(String nombre, int dni) {
         this.nombre = nombre;
         this.dni = dni;
+    }
+
+    public Persona(String nombre, String apellido, int edad, int dni, String sexo) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.dni = dni;
+        this.sexo = sexo;
     }
 
     public Persona(String nombre, String apellido, int edad, int dni, String sexo, double peso, double altura) {
@@ -32,13 +46,13 @@ public class Persona {
         this.altura = altura;
     }
 
-    public double CalcularIMC(double peso, double altura) {
-        double pesoideal = peso / Math.pow(altura, 2);
+    public double CalcularIMC() {
+        double pesoideal = this.peso / Math.pow(this.altura, 2);
         if (pesoideal <= 20) {
             return -1;
         } else {
             if (pesoideal >= 20 && pesoideal <= 25) {
-                return 0;
+                return  0;
             } else {
                 return 1;
             }
@@ -47,17 +61,28 @@ public class Persona {
 
     public boolean esMayordeEdad() {
         boolean confirmacion;
-        if (edad >= 18) {
-            return confirmacion = true;
+        if (this.edad >= 18) {
+            return true;
         } else
             return confirmacion = false;
     }
 
     public void comprobarSexo(char sexo) {
-        String confirmacion;
         if (sexo != 'M' && sexo != 'H') {
-            confirmacion = "H";
+            String confirmacion = "H";
         }
+    }
+
+    public String toString() {
+        return "Persona{" +
+                "nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", edad=" + edad +
+                ", dni=" + dni +
+                ", sexo=" + sexo +
+                ", peso=" + peso +
+                ", altura=" + altura +
+                '}';
     }
 
     public String getNombre() {
@@ -114,18 +139,5 @@ public class Persona {
 
     public void setAltura(double altura) {
         this.altura = altura;
-    }
-
-    @Override
-    public String toString() {
-        return "Persona{" +
-                "nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", edad=" + edad +
-                ", dni=" + dni +
-                ", sexo='" + sexo + '\'' +
-                ", peso=" + peso +
-                ", altura=" + altura +
-                '}';
     }
 }
